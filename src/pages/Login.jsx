@@ -45,7 +45,6 @@ class Login extends React.Component {
           <input
             type="text"
             data-testid="login-name-input"
-            id="login-name"
             name="name"
             placeholder="insira seu login"
             value={ name }
