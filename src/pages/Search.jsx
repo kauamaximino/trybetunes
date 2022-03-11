@@ -11,20 +11,18 @@ class Search extends React.Component {
     };
   }
 
-  btnSearchDisabled = () => {
-    const { inputArtist } = this.state;
-    const two = 2;
-    if (inputArtist.length >= two) {
-      this.setState({ btnSearch: false });
-    } else {
-      this.setState({ btnSearch: true });
-    }
-  }
-
   handleChangeArtist = ({ target: { name, value } }) => {
     this.setState({
       [name]: value,
-    }, this.btnSearchDisabled);
+    }, () => {
+      const { inputArtist } = this.state;
+      const two = 2;
+      if (inputArtist.length >= two) {
+        this.setState({ btnSearch: false });
+      } else {
+        this.setState({ btnSearch: true });
+      }
+    });
   }
 
   render() {
