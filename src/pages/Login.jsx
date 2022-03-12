@@ -52,11 +52,10 @@ class Login extends React.Component {
           />
 
           <button
-            type="submit"
+            type="button"
             data-testid="login-submit-button"
             disabled={ btnFalse }
-            onClick={ async (event) => {
-              event.preventDefault();
+            onClick={ () => {
               this.setState({ loading: true }, async () => {
                 await createUser({ name });
                 this.setState({ loading: false });
