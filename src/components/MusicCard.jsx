@@ -55,7 +55,7 @@ class MusicCard extends React.Component {
     const { loading, inputChecked } = this.state;
     return (
       <div>
-        <p>{trackName }</p>
+        <p>{ trackName }</p>
         <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento

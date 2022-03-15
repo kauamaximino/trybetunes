@@ -19,16 +19,14 @@ class Album extends React.Component {
     this.musics();
   }
 
-  musics = () => {
-    const { match } = this.props;
-    const { id } = match.params;
-    this.setState({}, async () => {
-      const response = await getMusics(id);
-      this.setState({
-        listMusics: response,
-        collectionName: response[0].collectionName,
-        artistName: response[0].artistName,
-      });
+  musics = async () => {
+    const { match: { params: { id } } } = this.props;
+    const response = await getMusics(id);
+    console.log(response);
+    this.setState({
+      listMusics: response,
+      collectionName: response[0].collectionName,
+      artistName: response[0].artistName,
     });
   }
 
@@ -43,7 +41,7 @@ class Album extends React.Component {
             <p data-testid="artist-name">{ artistName }</p>
             <p data-testid="album-name">{ collectionName }</p>
             {listMusics.map((element) => (
-              <div key={ `${element.trackNumber}${element.trackName}` }>
+              <div key={ `${element.trackId}` }>
                 {element.previewUrl && (
                   <MusicCard
                     trackName={ element.trackName }
