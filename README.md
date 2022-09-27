@@ -1,4 +1,4 @@
-<h1 align="center">Trybetunes 🎵</h1>
+<h1 align="center">TrybeTunes 🎵</h1>
 
 <h3 align="center">Neste projeto desenvolvi o TrybeTunes, uma aplicação capaz de reproduzir músicas das mais variadas bandas e artistas, criar uma lista de músicas favoritas e editar o perfil da pessoa usuária logada.</h3>
 <br/>
